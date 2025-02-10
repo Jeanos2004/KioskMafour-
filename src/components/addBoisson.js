@@ -8,7 +8,7 @@ export default function AddBoisson({setBoissons, boissons}) {
         const nom = e.target.nom.value;
         const prix = parseFloat(e.target.prix.value);
         const stock = parseInt(e.target.stock.value);
-        const image = e.target.image.value;
+        const image = "/images/Profile.jpg"
         const boisson = {id, nom, prix, stock, image};
         setBoissons((boissons) => [...boissons, boisson]);
         console.log(boisson);
@@ -28,10 +28,10 @@ export default function AddBoisson({setBoissons, boissons}) {
         <label htmlFor="stock" className="form-label">Stock</label>
         <input type="number" id="stock" name="stock" className="form-input" />
     </div>
-    <div className="form-group">
+    {/* <div className="form-group">
         <label htmlFor="image" className="form-label">Image</label>
         <input type="file" id="image" name="image" className="form-input form-file" />
-    </div>
+    </div> */}
     <button type="submit" className="form-button">Ajouter la Boisson</button>
 </form>
 

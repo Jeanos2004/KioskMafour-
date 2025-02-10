@@ -1,0 +1,89 @@
+# Explication des choix de découpage en composants
+
+Le découpage de l'application en composants a été réalisé en tenant compte de plusieurs critères : la séparation des responsabilités, la réutilisabilité, la facilité de maintenance et la clarté du code. Voici une explication détaillée des choix effectués :
+
+## Composant App
+
+**Rôle** : Le composant App est le point d'entrée de l'application. Il sert de conteneur principal qui orchestre tous les autres composants.
+
+**Responsabilités** :
+
+- Gérer l'état global de l'application (par exemple, la liste des boissons, les commandes en cours, etc.) à l'aide du hook useState.
+- Passer les données nécessaires aux composants enfants via les props.
+- Coordonner les interactions entre les différents composants.
+
+## Composant Header
+
+**Rôle** : Affiche les informations générales ou un titre pour l'application.
+
+**Responsabilités** :
+
+- Afficher un titre ou une bannière accueillante.
+- Potentiellement contenir des éléments de navigation ou des boutons d'action globaux.
+
+## Composant StatsBanner
+
+**Rôle** : Affiche les statistiques ou les informations importantes concernant les ventes quotidiennes.
+
+**Responsabilités** :
+
+- Calculer et afficher les revenus totaux, le nombre de commandes, etc.
+- Recevoir les données nécessaires depuis le composant parent (App) via les props.
+
+## Composant MenuSection
+
+**Rôle** : Gère l'affichage du menu de jus disponibles.
+
+**Responsabilités** :
+
+- Itérer sur la liste des boissons et afficher chaque boisson sous forme de BoissonCard.
+- Recevoir la liste des boissons depuis le composant parent (App) via les props.
+- Permettre l'ajout de nouvelles boissons via le composant AddBoisson.
+
+## Composant BoissonCard
+
+**Rôle** : Représente une carte individuelle pour chaque boisson dans le menu.
+
+**Responsabilités** :
+
+- Afficher les détails d'une boisson spécifique (nom, prix, image, etc.).
+- Recevoir les informations de la boisson depuis le composant parent (MenuSection) via les props.
+- Permettre l'interaction avec la boisson (par exemple, ajouter au panier).
+
+## Composant PanierSection
+
+**Rôle** : Gère l'affichage et la gestion du panier de commande.
+
+**Responsabilités** :
+
+- Afficher la liste des boissons ajoutées au panier.
+- Calculer le total de la commande.
+- Recevoir la liste des boissons dans le panier depuis le composant parent (App) via les props.
+- Permettre la modification du panier (ajout, suppression de boissons).
+
+## Composant HistoriqueCommande
+
+**Rôle** : Affiche l'historique des commandes passées.
+
+**Responsabilités** :
+
+- Afficher la liste des commandes précédentes.
+- Recevoir les données des commandes depuis le composant parent (App) via les props.
+
+## Composant AddBoisson
+
+**Rôle** : Permet d'ajouter de nouvelles boissons au menu.
+
+**Responsabilités** :
+
+- Fournir un formulaire pour saisir les informations d'une nouvelle boisson.
+- Envoyer les données de la nouvelle boisson au composant parent (App) pour mise à jour de l'état.
+
+## Composant Card
+
+**Rôle** : Représentation générique d'une carte utilisée dans différents contextes (menu, panier, historique).
+
+**Responsabilités** :
+
+- Afficher les informations d'un élément (boisson, commande) de manière stylisée.
+- Être réutilisable dans différents composants (BoissonCard, PanierSection, HistoriqueCommande).
