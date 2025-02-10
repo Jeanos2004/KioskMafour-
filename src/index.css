@@ -129,13 +129,13 @@
   justify-content: space-between;
 }
 .historique-commande {
-  width: 800px;
+  width: 850px;
+  height: 400px;
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .historique-commande h2 {
   margin-top: 0;
 }
@@ -182,6 +182,11 @@
 
 .form-group {
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+
 }
 
 .form-label {
@@ -214,8 +219,8 @@
 }
 .btn-clear{
   position: absolute;
-  right: 40px;
-  top: 1200px;
+  right: 8%;
+  top: 245%;
   padding: 10px 15px;
   border: none;
   border-radius: 8px;
@@ -232,4 +237,58 @@
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
+}
+/*Gestion de la responsivite */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .panier-content ul {
+    font-size: 0.8rem;
+  }
+  .form-add-beverage {
+    max-width: 100%;
+  }
+  .form-button {
+    font-size: 14px;
+  }
+  .btn-clear{
+    top: 225%;
+  }
+  .decrement_button{
+    margin-right: 0;
+  }
+  .cancel_button{
+    margin-top: 10px;
+
+  }
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .form-input {
+    width: 100%;
+  }
+  .form-label {
+    margin-bottom: 0;
+  }
+  .form-button {
+    width: 100%;
+  }
+  .form-button:hover {
+    background-color: #0056b3;
+  }
+  .btn-clear{
+    top: 480%;
+  }
+  .decrement_button{
+    margin-right: 0;
+  }
+ 
 }
