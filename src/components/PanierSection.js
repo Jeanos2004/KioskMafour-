@@ -1,5 +1,6 @@
 // PanierSection.js
 import React from 'react';
+import Card from './Card';
 
 const PanierSection = ({ panier, validerCommande, AnnulerLaSelection, decrementerQuantite }) => {
   return (
@@ -11,13 +12,15 @@ const PanierSection = ({ panier, validerCommande, AnnulerLaSelection, decremente
         <div className="panier-content">
           <ul>
             {panier.map((item, index) => (
-              <div className='item' key={index}>
+              <Card>
+                <div className='item' key={index}>
                 <li >
                     {item.quantite} {item.nom} - {item.prix} GNF
                 </li>
                 <button onClick={() => decrementerQuantite(index)} className='decrement_button'>-</button>
                 <button onClick={() => AnnulerLaSelection(index)} className='cancel_button'>Cancel</button>
               </div>
+              </Card>
             ))}
           </ul>
           <div className="panier-total">
